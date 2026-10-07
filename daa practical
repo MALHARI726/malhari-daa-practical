@@ -1,0 +1,908 @@
+# Program to insert an element in an array
+
+arr = []
+
+n = int(input("Enter number of elements: "))
+
+for i in range(n):
+    num = int(input("Enter element: "))
+    arr.append(num)
+
+print("Original Array:", arr)
+
+position = int(input("Enter position to insert (1 to {}): ".format(n + 1)))
+element = int(input("Enter element to insert: "))
+
+arr.insert(position - 1, element)
+
+print("Array after insertion:")
+print(arr)
+# Matrix Addition and Multiplication
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+A = []
+B = []
+
+print("Enter elements of Matrix A")
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    A.append(row)
+
+print("Enter elements of Matrix B")
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    B.append(row)
+
+print("\nAddition of Matrices")
+
+for i in range(rows):
+    for j in range(cols):
+        print(A[i][j] + B[i][j], end=" ")
+    print()
+
+print("\nMultiplication of Matrices")
+
+result = []
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        total = 0
+        for k in range(cols):
+            total = total + A[i][k] * B[k][j]
+        row.append(total)
+    result.append(row)
+
+for i in range(rows):
+    for j in range(cols):
+        print(result[i][j], end=" ")
+    print()
+# Program to display a matrix using recursion
+
+def display(matrix, rows, cols, i, j):
+
+    if i == rows:
+        return
+
+    print(matrix[i][j], end=" ")
+
+    if j == cols - 1:
+        print()
+        display(matrix, rows, cols, i + 1, 0)
+    else:
+        display(matrix, rows, cols, i, j + 1)
+
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+matrix = []
+
+print("Enter matrix elements:")
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    matrix.append(row)
+
+print("\nMatrix:")
+
+display(matrix, rows, cols, 0, 0)
+# Program to find transpose of a matrix
+
+rows = int(input("Enter number of rows: "))
+cols = int(input("Enter number of columns: "))
+
+matrix = []
+
+print("Enter matrix elements")
+
+for i in range(rows):
+    row = []
+    for j in range(cols):
+        row.append(int(input()))
+    matrix.append(row)
+
+print("\nOriginal Matrix")
+
+for i in range(rows):
+    for j in range(cols):
+        print(matrix[i][j], end=" ")
+    print()
+
+print("\nTranspose Matrix")
+
+for j in range(cols):
+    for i in range(rows):
+        print(matrix[i][j], end=" ")
+    print()
+arr = list(map(int, input("Enter elements: ").split()))
+
+pos = int(input("Position: "))
+val = int(input("Value: "))
+
+arr.insert(pos - 1, val)
+
+print(arr)
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+head = Node(10)
+
+head.next = Node(20)
+
+head.next.next = Node(30)
+
+temp = head
+
+while temp:
+    print(temp.data, end=" ")
+
+    temp = temp.next
+r, c = map(int, input().split())
+
+A = [list(map(int, input().split())) for _ in range(r)]
+
+B = [list(map(int, input().split())) for _ in range(r)]
+
+print("Addition")
+
+for i in range(r):
+    row = []
+
+    for j in range(c):
+        row.append(A[i][j] + B[i][j])
+
+    print(row)
+
+
+print("Multiplication")
+
+for i in range(r):
+    row = []
+
+    for j in range(c):
+        s = 0
+
+        for k in range(c):
+            s += A[i][k] * B[k][j]
+
+        row.append(s)
+
+    print(row)
+def show(a, i, j):
+    if i == len(a):
+        return
+
+    print(a[i][j], end=" ")
+
+    if j == len(a[0]) - 1:
+        print()
+        show(a, i + 1, 0)
+    else:
+        show(a, i, j + 1)
+
+
+r, c = map(int, input().split())
+
+a = [list(map(int, input().split())) for _ in range(r)]
+
+show(a, 0, 0)
+stack = []
+
+stack.append(10)
+stack.append(20)
+
+print(stack)
+
+print("Pop:", stack.pop())
+
+print(stack)
+r, c = map(int, input().split())
+
+a = [list(map(int, input().split())) for _ in range(r)]
+
+for j in range(c):
+    for i in range(r):
+        print(a[i][j], end=" ")
+
+    print()
+a = sorted(list(map(int, input().split())))
+
+key = int(input())
+
+l = 0
+r = len(a) - 1
+
+while l <= r:
+    m = (l + r) // 2
+
+    if a[m] == key:
+        print("Found")
+        break
+
+    elif key < a[m]:
+        r = m - 1
+
+    else:
+        l = m + 1
+
+else:
+    print("Not Found")
+a = list(map(int, input().split()))
+
+for i in range(len(a)):
+    for j in range(len(a) - 1 - i):
+        if a[j] > a[j + 1]:
+            a[j], a[j + 1] = a[j + 1], a[j]
+
+print(a)
+a = list(map(int, input().split()))
+
+for i in range(1, len(a)):
+    key = a[i]
+    j = i - 1
+
+    while j >= 0 and a[j] > key:
+        a[j + 1] = a[j]
+        j -= 1
+
+    a[j + 1] = key
+
+print(a)
+a = list(map(int, input().split()))
+
+key = int(input())
+
+f = False
+
+for i in range(len(a)):
+    if a[i] == key:
+        print("Found at", i)
+        f = True
+        break
+
+if not f:
+    print("Not Found")
+a = list(map(int, input().split()))
+
+for i in range(len(a)):
+    m = i
+
+    for j in range(i + 1, len(a)):
+        if a[j] < a[m]:
+            m = j
+
+    a[i], a[m] = a[m], a[i]
+
+print(a)
+import numpy as np
+
+arr = np.array([
+    [10, 20, 30],
+    [40, 50, 60]
+])
+
+print(arr)
+import numpy as np
+
+arr = np.array([
+    [10, 20, 30],
+    [40, 50, 60]
+])
+
+print("Shape:", arr.shape)
+import numpy as np
+
+marks = np.array([60, 70, 80, 90, 75])
+
+print("Mean:", np.mean(marks))
+print("Median:", np.median(marks))
+print("Standard Deviation:", np.std(marks))
+import numpy as np
+
+numbers = np.random.randint(1, 100, 10)
+
+print(numbers)
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5, 6])
+
+new_arr = arr.reshape(2, 3)
+
+print(new_arr)
+import matplotlib.pyplot as plt
+
+names = ["Rahul", "Priya", "Amit", "Sneha"]
+marks = [75, 90, 65, 85]
+
+plt.bar(names, marks)
+
+plt.xlabel("Students")
+plt.ylabel("Marks")
+plt.title("Student Marks")
+
+plt.show()
+import matplotlib.pyplot as plt
+
+marks = [50, 60, 65, 70, 70, 75, 80, 85, 90, 95]
+
+plt.hist(marks)
+
+plt.xlabel("Marks")
+plt.ylabel("Number of Students")
+plt.title("Distribution of Marks")
+
+plt.show()
+import matplotlib.pyplot as plt
+
+months = ["Jan", "Feb", "Mar", "Apr"]
+sales = [100, 150, 130, 180]
+
+plt.plot(months, sales)
+
+plt.xlabel("Month")
+plt.ylabel("Sales")
+plt.title("Monthly Sales")
+
+plt.show()
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha"],
+    "Marks": [75, 35, 65, 90]
+}
+
+df = pd.DataFrame(data)
+
+df["Result"] = df["Marks"].apply(
+    lambda x: "Pass" if x >= 40 else "Fail"
+)
+
+print(df)
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha"],
+    "Course": ["BSc", "BCA", "BSc", "BCA"]
+}
+
+df = pd.DataFrame(data)
+
+print(df["Course"].value_counts())
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha"],
+    "Course": ["BSc", "BCA", "BSc", "BCA"],
+    "Marks": [80, 90, 70, 85]
+}
+
+df = pd.DataFrame(data)
+
+result = df.groupby("Course")["Marks"].mean()
+
+print(result)
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha", "Kiran"],
+    "Marks": [75, 95, 65, 90, 85]
+}
+
+df = pd.DataFrame(data)
+
+result = df.sort_values("Marks", ascending=False)
+
+print(result.head(3))
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+head = Node(10)
+head.next = Node(20)
+head.next.next = Node(30)
+
+# Delete 20
+head.next = head.next.next
+
+current = head
+
+while current:
+    print(current.data)
+    current = current.next
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+
+n1.next = n2
+n2.next = n3
+
+current = n1
+
+while current:
+    print(current.data)
+    current = current.next
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+head = Node(20)
+head.next = Node(30)
+
+new_node = Node(10)
+new_node.next = head
+head = new_node
+
+current = head
+
+while current:
+    print(current.data)
+    current = current.next
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+head = Node(10)
+head.next = Node(20)
+
+new_node = Node(30)
+
+current = head
+
+while current.next:
+    current = current.next
+
+current.next = new_node
+
+current = head
+
+while current:
+    print(current.data)
+    current = current.next
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+head = Node(10)
+head.next = Node(20)
+head.next.next = Node(30)
+
+search = int(input("Enter value to search: "))
+
+current = head
+found = False
+
+while current:
+    if current.data == search:
+        found = True
+        break
+    current = current.next
+
+if found:
+    print("Element found")
+else:
+    print("Element not found")
+stack = []
+
+stack.append(10)
+stack.append(20)
+stack.append(30)
+
+print("Stack:", stack)
+
+print("Deleted:", stack.pop())
+
+print("Stack after deletion:", stack)
+stack = []
+
+while True:
+    print("\n1. Push")
+    print("2. Pop")
+    print("3. Display")
+    print("4. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        value = int(input("Enter value: "))
+        stack.append(value)
+
+    elif choice == 2:
+        if len(stack) == 0:
+            print("Stack is empty")
+        else:
+            print("Deleted:", stack.pop())
+
+    elif choice == 3:
+        print("Stack:", stack)
+
+    elif choice == 4:
+        break
+
+    else:
+        print("Invalid choice")
+from collections import deque
+
+queue = deque(maxlen=3)
+
+queue.append(10)
+queue.append(20)
+queue.append(30)
+
+print(queue)
+
+queue.append(40)
+
+print(queue)
+queue = []
+
+queue.append(10)
+queue.append(20)
+queue.append(30)
+
+print("Queue:", queue)
+
+print("Deleted:", queue.pop(0))
+
+print("Queue after deletion:", queue)
+queue = []
+
+while True:
+    print("\n1. Insert")
+    print("2. Delete")
+    print("3. Display")
+    print("4. Exit")
+
+    choice = int(input("Enter choice: "))
+
+    if choice == 1:
+        value = int(input("Enter value: "))
+        queue.append(value)
+
+    elif choice == 2:
+        if len(queue) == 0:
+            print("Queue is empty")
+        else:
+            print("Deleted:", queue.pop(0))
+
+    elif choice == 3:
+        print("Queue:", queue)
+
+    elif choice == 4:
+        break
+
+    else:
+        print("Invalid choice")
+numbers = [10, 20, 30, 40, 50, 60]
+
+search = int(input("Enter number: "))
+
+low = 0
+high = len(numbers) - 1
+
+while low <= high:
+
+    mid = (low + high) // 2
+
+    if numbers[mid] == search:
+        print("Element found")
+        break
+
+    elif search > numbers[mid]:
+        low = mid + 1
+
+    else:
+        high = mid - 1
+
+else:
+    print("Element not found")
+numbers = [50, 20, 40, 10, 30]
+
+for i in range(len(numbers)):
+
+    for j in range(len(numbers) - i - 1):
+
+        if numbers[j] > numbers[j + 1]:
+            numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+
+print("Sorted list:", numbers)
+numbers = [50, 20, 40, 10, 30]
+
+for i in range(1, len(numbers)):
+
+    key = numbers[i]
+    j = i - 1
+
+    while j >= 0 and numbers[j] > key:
+        numbers[j + 1] = numbers[j]
+        j = j - 1
+
+    numbers[j + 1] = key
+
+print("Sorted list:", numbers)
+numbers = [10, 20, 30, 40, 50]
+
+search = int(input("Enter number: "))
+
+found = False
+
+for i in range(len(numbers)):
+    if numbers[i] == search:
+        print("Element found at position", i)
+        found = True
+        break
+
+if not found:
+    print("Element not found")
+numbers = [50, 20, 40, 10, 30]
+
+for i in range(len(numbers)):
+
+    minimum = i
+
+    for j in range(i + 1, len(numbers)):
+
+        if numbers[j] < numbers[minimum]:
+            minimum = j
+
+    numbers[i], numbers[minimum] = numbers[minimum], numbers[i]
+
+print(numbers)
+class Node:
+
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+root = Node(10)
+
+root.left = Node(20)
+root.right = Node(30)
+
+print("Root:", root.data)
+print("Left:", root.left.data)
+print("Right:", root.right.data)
+student = {
+    "RollNo": 101,
+    "Name": "Rahul",
+    "Marks": 85
+}
+
+print("Roll No:", student["RollNo"])
+print("Name:", student["Name"])
+print("Marks:", student["Marks"])
+numbers = [10, 20, 10, 30, 20, 10]
+
+frequency = {}
+
+for number in numbers:
+
+    if number in frequency:
+        frequency[number] += 1
+    else:
+        frequency[number] = 1
+
+print(frequency)
+def factorial(n):
+
+    if n == 0:
+        return 1
+
+    return n * factorial(n - 1)
+
+
+num = int(input("Enter number: "))
+
+print("Factorial:", factorial(num))
+def fibonacci(n):
+
+    if n <= 1:
+        return n
+
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+n = int(input("Enter number of terms: "))
+
+for i in range(n):
+    print(fibonacci(i), end=" ")
+from collections import deque
+
+queue = deque()
+
+queue.append(10)
+queue.append(20)
+queue.append(30)
+
+print("Queue:", queue)
+
+queue.popleft()
+
+print("After deletion:", queue)
+A = {10, 20, 30, 40}
+B = {30, 40, 50, 60}
+
+print("Union:", A | B)
+print("Intersection:", A & B)
+print("Difference:", A - B)
+class Node:
+
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+stack = None
+
+# Push 10
+new_node = Node(10)
+new_node.next = stack
+stack = new_node
+
+# Push 20
+new_node = Node(20)
+new_node.next = stack
+stack = new_node
+
+# Display
+current = stack
+
+while current:
+    print(current.data)
+    current = current.next
+class Node:
+
+    def __init__(self, data):
+        self.data = data
+        self.left = None
+        self.right = None
+
+
+def inorder(root):
+
+    if root:
+        inorder(root.left)
+        print(root.data)
+        inorder(root.right)
+
+
+root = Node(10)
+root.left = Node(20)
+root.right = Node(30)
+
+inorder(root)
+text = "python data science python data"
+
+words = text.split()
+
+frequency = {}
+
+for word in words:
+
+    if word in frequency:
+        frequency[word] += 1
+    else:
+        frequency[word] = 1
+
+print(frequency)
+import numpy as np
+
+numbers = np.array([10, 20, 30, 40, 50])
+
+print("Array:", numbers)
+import numpy as np
+
+numbers = np.array([10, 20, 30, 40, 50])
+
+print("Original array:", numbers)
+print("Addition:", numbers + 5)
+print("Subtraction:", numbers - 5)
+print("Multiplication:", numbers * 2)
+import numpy as np
+
+numbers = np.array([25, 10, 45, 30, 15])
+
+print("Array:", numbers)
+print("Maximum:", np.max(numbers))
+print("Minimum:", np.min(numbers))
+import numpy as np
+
+numbers = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+
+print("Original array:", numbers)
+
+print("First five elements:", numbers[0:5])
+import numpy as np
+
+numbers = np.array([20, 45, 60, 75, 30, 90])
+
+result = numbers[numbers > 50]
+
+print("Values greater than 50:", result)
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha"],
+    "Marks": [75, 85, 65, 90]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha"],
+    "Marks": [75, 85, 65, 90]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+print("\nStatistical Information:")
+print(df["Marks"].describe())
+import pandas as pd
+
+marks = {
+    "Rahul": 75,
+    "Priya": 85,
+    "Amit": 65,
+    "Sneha": 90
+}
+
+series = pd.Series(marks)
+
+print(series)
+import pandas as pd
+
+marks = pd.Series([55, 75, 80, 60, 90])
+
+result = marks[marks > 70]
+
+print("Marks greater than 70:")
+print(result)
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha", "Kiran"],
+    "Marks": [75, 85, 60, 90, 65],
+    "Attendance": [80, 90, 75, 95, 70]
+}
+
+df = pd.DataFrame(data)
+
+print("Student Data:")
+print(df)
+
+print("\nStudents scoring more than 70:")
+print(df[df["Marks"] > 70])
