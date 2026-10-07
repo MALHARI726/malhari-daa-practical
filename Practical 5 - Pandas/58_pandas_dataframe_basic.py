@@ -1,0 +1,14 @@
+import pandas as pd
+
+data = {
+    "Name": ["Rahul", "Priya", "Amit", "Sneha"],
+    "Marks": [75, 85, 65, 90]
+}
+
+df = pd.DataFrame(data)
+
+print(df)
+
+print("\nStatistical Information:")
+print(df["Marks"].describe())
+import pandas as pd
